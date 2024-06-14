@@ -3,7 +3,7 @@ describe('dark mode', () => {
     cy.visit('/');
 
     const btn = cy.get(".slider");
-    const body = cy.get("body");
+    
     btn.click();
 
     cy.get("body").should("have.css", "background-color", "rgb(0, 0, 0)");
