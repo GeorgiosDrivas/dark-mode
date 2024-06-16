@@ -1,5 +1,5 @@
-$background-color: #fff
-$color: #000
+@use "./_mixin" as *
+@use "./_variables" as *
 
 :root 
   --background: #{$background-color}
@@ -15,20 +15,18 @@ body
     color: var(--color)
     
 .wrapper
-    position: relative
+    position: $position-relative
     width: 100vw
     height: 100vh
-    display: flex
-    justify-content: center
-    align-items: center
+    @include displayFlex()
     
 .switch-wrap
-    position: absolute
+    position: $position-absolute
     top: 10px
     right: 50px
 
 .switch 
-  position: relative
+  position: $position-relative
   display: inline-block
   width: 60px
   height: 34px
@@ -39,7 +37,7 @@ body
   height: 0
 
 .slider
-  position: absolute
+  position: $position-absolute
   cursor: pointer
   top: 0
   left: 0
@@ -50,7 +48,7 @@ body
   transition: .4s
 
 .slider:before
-  position: absolute
+  position: $position-absolute
   content: ""
   height: 26px
   width: 26px
